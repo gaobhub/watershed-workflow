@@ -202,7 +202,7 @@ class SplitHUCs:
         ml = shapely.ops.linemerge(segs)
         assert (type(ml) is shapely.geometry.LineString)
         poly = shapely.geometry.Polygon(ml)
-        poly.properties = self.properties[i]
+#        poly.properties = self.properties[i]
         return poly
 
     def polygons(self):

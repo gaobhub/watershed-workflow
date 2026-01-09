@@ -71,9 +71,9 @@ def create_shply(shape, properties=None, flip=False):
         if flip:
             thing = shapely.ops.transform(lambda x, y: (y, x), thing)
 
-        thing.properties = properties
+#        thing.properties = properties
         thing_2D = remove_third_dimension(thing)
-        thing_2D.properties = thing.properties
+#        thing_2D.properties = thing.properties
         return thing_2D
 
     except ValueError:
