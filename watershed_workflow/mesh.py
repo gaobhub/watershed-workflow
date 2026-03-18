@@ -143,14 +143,10 @@ class Mesh2D:
     crs = attr.ib(default=None)
     eps = attr.ib(default=0.001)
     _check_handedness = attr.ib(default=True)
-    _validate = attr.ib(default=False)
 
     def __attrs_post_init__(self):
         if self._check_handedness:
             self.check_handedness()
-        if self._validate:
-            self.validate()
-        del self._validate
 
     @property
     def conn(self):
@@ -834,12 +830,6 @@ class Mesh3D:
     material_ids = attr.ib(default=None)
     crs = attr.ib(default=None)
     eps = attr.ib(default=0.001)
-    _validate = attr.ib(default=False)
-
-    def __attrs_post_init__(self):
-        if self._validate:
-            self.validate()
-        del self._validate
 
     @property
     def face_to_node_conn(self):
